@@ -1,0 +1,18 @@
+---
+- view:
+    name: QA
+    view-type: list
+    description: |
+      <h3 style="color:#999696;">QA Jobs</h3>
+    filter-executors: true
+    filter-queue: true
+    job-name:
+      -'ui-autotests'
+    columns:
+      - status
+      - weather
+      - job
+      - last-success
+      - last-failure
+      - last-duration
+      - build-button

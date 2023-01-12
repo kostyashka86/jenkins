@@ -1,0 +1,26 @@
+- job-template:
+    name: 'ui-autotests'
+    description: '<h4 style="color:#999696;">Run UI tests</h4>'
+    project-type: pipeline
+    concurrent: true
+    parameters:
+      - string:
+          name: BRANCH
+          default: master
+          description: "Branch for tempest UI OTUS tests"
+      - string:
+          name: BASE_URL
+          default: https://otus.ru
+          description: "Hostname of stand"
+      - string:
+          name: BROWSER_NAME
+          default: chrome
+          description: "Browser name"
+      - string:
+          name: BROWSER_VERSION
+          default: "107.0"
+          description: "Browser version"
+    pipeline-scm:
+      scm:
+      - git-ui-autotests
+      script-path: jenkins/ui-autotests.groovy
