@@ -1,0 +1,33 @@
+- job-template:
+    name: 'api-autotests'
+    description: '<h3 style="color:#999696;">API autotests</h3>'
+    project-type: pipeline
+    concurrent: true
+    logrotate:
+      daysToKeep: 30
+      numToKeep: 10
+    properties:
+      - build-discarder:
+          num-to-keep: 100
+    parameters:
+      - string:
+          name: BRANCH
+          default: master
+          description: Branch for tempest API tests
+      - string:
+          name: API_URL
+          default: https://petstore.swagger.io/v2
+          description: Base url
+    pipeline-scm:
+      scm:
+        - git-api-tests
+      script-path: jenkins/api-autotests.groovy
+    publishers:
+      - allure:
+        results-paths:
+          - path: 'allure-results'
+        properties:
+          - jdk: openjdk1.8
+        commandline: allure2
+        report-build-policy: UNSTABLE
+        include-properties: true

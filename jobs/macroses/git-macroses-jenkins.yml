@@ -1,9 +1,18 @@
 - scm:
     name: git-ui-autotests
     scm:
-    - git:
-        url: git@github.com:kostyashka86/MyOtusHomeWork.git
-        credentials-id: jenkins
-        branches:
-        - FETCH_HEAD
-        refspec: ${BRANCH}
+      - git:
+          url: git@github.com:kostyashka86/MyOtusHomeWork.git
+          credentials-id: jenkins
+          branches:
+            - FETCH_HEAD
+          refspec: ${BRANCH}
+- scm:
+    name: git-api-autotests
+    scm:
+      - git:
+          url: git@github.com:kostyashka86/RestAssured.git
+          credentials-id: jenkins
+          branches:
+            - FETCH_HEAD
+          refspec: ${BRANCH}

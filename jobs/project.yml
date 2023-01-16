@@ -5,3 +5,5 @@
     job-description: '<h4 style="color:#999696;">UI tests</h4>'
     jobs:
       - 'ui-autotests'
+      - 'api-autotests'
+      - 'runner'
