@@ -20,7 +20,7 @@
           description: Base url
     pipeline-scm:
       scm:
-        - git-api-tests
+        - git-api-autotests
       script-path: jenkins/api-autotests.groovy
     publishers:
       - allure:

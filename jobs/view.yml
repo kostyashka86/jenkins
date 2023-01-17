@@ -9,7 +9,7 @@
     job-name:
       - 'ui-autotests'
       - 'api-autotests'
-      - 'runner-autotests'
+      - 'runner'
     columns:
       - status
       - weather

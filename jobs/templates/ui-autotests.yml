@@ -22,9 +22,18 @@
           description: "Browser version"
       - string:
           name: GRID_URL
-          default: "http://127.0.0.1.4445"
+          default: "http://127.0.0.1:4445/wd/hub"
           description: "URL of selenoid"
     pipeline-scm:
       scm:
       - git-ui-autotests
       script-path: jenkins/ui-autotests.groovy
+    publishers:
+      - allure:
+        results-paths:
+          - path: 'allure-results'
+        properties:
+          - jdk: openjdk1.8
+        commandline: allure2
+        report-build-policy: UNSTABLE
+        include-properties: true

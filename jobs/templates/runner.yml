@@ -1,5 +1,5 @@
 - job-template:
-    name: 'runner-tests'
+    name: 'runner'
     description: '<h3 style="color:#999696;">Runner tests</h3>'
     project-type: pipeline
     concurrent: true
@@ -39,12 +39,9 @@
           quote-value: false
           visible-items: 3
           type: multi-select
-          default-value: ui,api,mobile
+          default-value: ui,api
           value: ui,api
     pipeline-scm:
-      - scm:
+        scm:
         - git-ui-autotests
         script-path: jenkins/ui-autotests.groovy
-      - scm:
-        - git-api-autotests
-        script-path: jenkins/api-autotests.groovy
