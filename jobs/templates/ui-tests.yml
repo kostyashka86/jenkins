@@ -1,0 +1,43 @@
+- job-template:
+    name: 'ui-tests'
+    description: '<h4 style="color:#999696;">Run UI tests</h4>'
+    project-type: pipeline
+    concurrent: true
+    parameters:
+      - string:
+          name: BRANCH
+          default: master
+          description: "Branch for tempest UI OTUS tests"
+      - string:
+          name: BASE_URL
+          default: https://otus.ru
+          description: "Hostname of stand"
+      - string:
+          name: BROWSER_NAME
+          default: chrome
+          description: "Browser name"
+      - string:
+          name: BROWSER_VERSION
+          default: "107.0"
+          description: "Browser version"
+      - string:
+          name: FILTER
+          default: "QA"
+          description: "Фильтр поиска"
+      - string:
+          name: GRID_URL
+          default: "http://127.0.0.1:4445/wd/hub"
+          description: "URL of selenoid"
+    pipeline-scm:
+      scm:
+      - git-ui-tests
+      script-path: jenkins/ui-tests.groovy
+    publishers:
+      - allure:
+        results-paths:
+          - path: 'allure-results'
+        properties:
+          - jdk: openjdk1.8
+        commandline: allure2
+        report-build-policy: UNSTABLE
+        include-properties: true
