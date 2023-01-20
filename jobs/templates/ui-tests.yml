@@ -3,6 +3,12 @@
     description: '<h4 style="color:#999696;">Run UI tests</h4>'
     project-type: pipeline
     concurrent: true
+    logrotate:
+      daysToKeep: 30
+      numToKeep: 10
+    properties:
+      - build-discarder:
+          num-to-keep: 100
     parameters:
       - string:
           name: BRANCH
