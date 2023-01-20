@@ -2,5 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/jenkins_home/workspace/api-tests@script/f997c7ed060e474a5440f3bb63339e1f1e32abc9ca23a64d1eb159e0d0490c40" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/jenkins_home/workspace/runner@script/cf68d65e28174fd08b01156d4bc52b4a645e7d6e916d39abced25b0430104cf3" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/jenkins_home/workspace/ui-tests@script/cf68d65e28174fd08b01156d4bc52b4a645e7d6e916d39abced25b0430104cf3" vcs="Git" />
   </component>
 </project>

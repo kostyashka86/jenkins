@@ -19,16 +19,20 @@
           default: https://otus.ru
           description: Base url
       - string:
-          name: BROWSER
+          name: BROWSER_NAME
           default: chrome
           description: Browser
+      - string:
+          name: FILTER
+          default: QA
+          description: Фильтр поиска
       - string:
           name: BROWSER_VERSION
           default: 107.0
           description: Browser version
       - string:
           name: GRID_URL
-          default: http://127.0.0.1.4445
+          default: http://127.0.0.1:4445/wd/hub
       - string:
           name: API_URL
           default: https://petstore.swagger.io/v2
@@ -43,5 +47,5 @@
           value: ui,api
     pipeline-scm:
         scm:
-        - git-ui-autotests
-        script-path: jenkins/ui-autotests.groovy
+        - git-jenkins
+        script-path: jobs/scripts/run-all-tests.groovy

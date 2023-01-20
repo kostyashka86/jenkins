@@ -7,8 +7,8 @@
     filter-executors: true
     filter-queue: true
     job-name:
-      - 'ui-autotests'
-      - 'api-autotests'
+      - 'ui-tests'
+      - 'api-tests'
       - 'runner'
     columns:
       - status
